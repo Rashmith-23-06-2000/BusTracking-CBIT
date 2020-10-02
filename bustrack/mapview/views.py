@@ -54,7 +54,7 @@ def login(request):
 					td=requests.get('http://ec2-13-233-193-38.ap-south-1.compute.amazonaws.com/tracking',headers={'Authorization':f'Bearer {p}'},data={'routeId':None,'deviceTime':None})
 					track_liv=td.json()
 					if(uname=='superuser'):
-						return render(request,'http://127.0.0.1:8000/show')
+						return show(request,'http://127.0.0.1:8000/show')
 					return index(request,rme)	
 				else:
 					s1="user "+uname+" is blocked"
